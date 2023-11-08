@@ -12,18 +12,17 @@
         <section class="users">
             <header>
                 <?php
-                
                 include("inc/config.php");
-                $result = mysqli_query($conn, "SELECT * FROM users WHERE  matNo = {$_SESSION['matNo']}");
+                $result = mysqli_query($conn, "SELECT * FROM users WHERE matNo = {$_SESSION['matNo']}");
                 if(!$result){
                     echo mysqli_error($conn);
-                 }
+                }
                 if(mysqli_num_rows($result) > 0){
                     $userData = mysqli_fetch_array($result);
                 }
                 ?>
                 <div class="content">
-                    <img src="https://127.0.0.1/chat_org/chatting_app/img/<?php echo $userData['image']; ?>" alt="">
+                    <img src="https://127.0.0.1/chat_org/chatting_app/img/<?php echo $userData['image'];?>.jpg" alt="">
                     <div class="details">
                         <span><?php echo $userData['lName']." ".$userData['fName'];?></span>
                         <p><?php echo $userData['onlStatus']; ?></p>
@@ -37,7 +36,7 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="user-list">
-               
+
             </div>
         </section>
     </div>

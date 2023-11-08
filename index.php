@@ -5,7 +5,7 @@
 <body>
     <?php include("inc/config.php") ?>
     <div class="wrapper">
-    <?php include("inc/alerts.php"); ?>
+        <?php include("inc/alerts.php"); ?>
         <section class="form signup">
             <header>UNITY Chat</header>
             <form action="#">
@@ -42,7 +42,9 @@
                             $id = $row['id'];
                             $name = $row['name'];
                             ?>
-                        <option <?php if(isset($_POST['department']) && $_POST['department'] == $id){ echo "selected"; } ?> value="<?php echo $id; ?>"><?php echo $name; ?></option>
+                        <option
+                            <?php if(isset($_POST['department']) && $_POST['department'] == $id){ echo "selected"; } ?>
+                            value="<?php echo $id; ?>"><?php echo $name; ?></option>
                         <?php } ?>
                     </select>
                     <span class="text-danger"><?php if(isset($departmentErr)){ echo $departmentErr; } ?></span>
@@ -57,7 +59,8 @@
                             $id = $row['id'];
                             $name = $row['name'];
                             ?>
-                        <option <?php if(isset($_POST['school']) && $_POST['school'] == $id){ echo "selected"; } ?> value="<?php echo $id; ?>"><?php echo $name; ?></option>
+                        <option <?php if(isset($_POST['school']) && $_POST['school'] == $id){ echo "selected"; } ?>
+                            value="<?php echo $id; ?>"><?php echo $name; ?></option>
                         <?php } ?>
                     </select>
                     <span class="text-danger"><?php if(isset($schoolErr)){ echo $schoolErr; } ?></span>
@@ -72,7 +75,8 @@
                             $id = $row['id'];
                             $name = $row['name'];
                             ?>
-                        <option <?php if(isset($_POST['gender']) && $_POST['gender'] == $id){ echo "selected"; } ?> value="<?php echo $id; ?>"><?php echo $name; ?></option>
+                        <option <?php if(isset($_POST['gender']) && $_POST['gender'] == $id){ echo "selected"; } ?>
+                            value="<?php echo $id; ?>"><?php echo $name; ?></option>
                         <?php } ?>
                     </select>
                     <span class="text-danger"><?php if(isset($genderErr)){ echo $genderErr; } ?></span>
@@ -82,12 +86,13 @@
                     <select class="form-select" name="role" aria-label="Role">
                         <option value=""> -- select --</option>
                         <?php
-                            $query = mysqli_query($conn, "SELECT * FROM user_roles");
+                            $query = mysqli_query($conn, "SELECT * FROM roles");
                             while($row = mysqli_fetch_array($query)){
                             $id = $row['id'];
                             $name = $row['name'];
                             ?>
-                        <option <?php if(isset($_POST['role']) && $_POST['role'] == $id){ echo "selected"; } ?> value="<?php echo $id; ?>"><?php echo $name; ?></option>
+                        <option <?php if(isset($_POST['role']) && $_POST['role'] == $id){ echo "selected"; } ?>
+                            value="<?php echo $id; ?>"><?php echo $name; ?></option>
                         <?php } ?>
                     </select>
                     <span class="text-danger"><?php if(isset($roleErr)){ echo $roleErr; } ?></span>
